@@ -1,11 +1,22 @@
+"use client";
+import MobileNav from "@/Components/MobileNav/MobileNav"
 import Nav from "@/Components/Nav/Nav"
-import React from "react"
+import { useState } from "react";
+
 
 const Index = () => {
+
+  const [nav, setNav] = useState(false)
+
+  const openNav = () => setNav(true);
+
+  const closeNav = () => setNav(false);
+
   return (
     <div className="overflow-x-hidden">
       <div>
-        <Nav/>
+        <MobileNav nav={nav} closeNav={closeNav} />
+        <Nav openNav={openNav} />
       </div>
     </div>
 
